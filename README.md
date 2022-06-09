@@ -15,42 +15,54 @@ A process known as "burning the PROM" blows fuses for bit settings, rendering th
 Figure -01 PROM 
  
  
-### Procedure
+### Procedure:
 /* write all the steps invloved */
 
+1.Start the module using module ten().
 
+2.Declare the inputs clock and outputs required.
 
-### PROGRAM 
-/*
+3.Begin tha logic with negative edge clock.
+
+4.Assign differnt values for different address.
+
+5.End module.
+
+6.Generate RTL and TIMINIG DIAGRAM
+
+### PROGRAM:
+```
 Program for PROM 
-Developed by: 
-RegisterNumber:  
-*/
+Developed by:Akkireddy Ruchitha Reddy 
+RegisterNumber:212221230004  
+```
+```
+module ROM_code(out, addr, CS);
+output[15:0] out;
+input[3:0] addr;
+input CS;
+reg [15:0] out;
+reg [15:0] ROM[15:0];
+always @(negedge CS)
+begin
+ROM[0]=16'h5601; ROM[1]=16'h3401;
+ROM[2]=16'h1801; ROM[3]=16'h0ac1;
+ROM[4]=16'h0521; ROM[5]=16'h0221;
+ROM[6]=16'h5601; ROM[7]=16'h5401;
+ROM[8]=16'h4801; ROM[9]=16'h3801;
+ROM[10]=16'h3001; ROM[11]=16'h2401;
+ROM[12]=16'h1c01; ROM[13]=16'h1601;
+ROM[14]=16'h5601; ROM[15]=16'h5401;
+out=ROM[addr];
+end
+endmodule
+```
+### Output:
+### RTL LOGIC:  
+![output](https://github.com/RuchithaReddy28/Experiment--10-Programmable-logic-devices-/blob/main/rom%20op.png?raw=true)
 
+### TIMING DIGRAMS:
+![output](https://github.com/RuchithaReddy28/Experiment--10-Programmable-logic-devices-/blob/main/rom%20timing.png?raw=true)
 
-
-
-
-
-### RTL LOGIC  
-
-
-
-
-
-
-
-
-### TIMING DIGRAMS  
-
-
-
-
-
- 
-
-
-
-
-
-### RESULTS 
+### RESULTS:
+Thus the program to design a programmable logical device is done successfully.
